@@ -7,7 +7,7 @@ trendingBtn.addEventListener('click', () =>{
 })
 
 arrowBtn.addEventListener('click', () =>{
-    location.hash = '#home'
+    history.back()
 })
 
 
@@ -78,6 +78,7 @@ function categoriesPage(){
 }
 
 function movieDetailsPage(){
+    console.log('Movie')
 
     headerSection.classList.add('header-container--long');
     //headerSection.style.background = '';
@@ -92,7 +93,8 @@ function movieDetailsPage(){
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
 
-    console.log('Movie')
+    const [_, movieId] = location.hash.split('=');
+    getMovieById(movieId)
 }
 
 function searchPage(){
@@ -104,7 +106,7 @@ function searchPage(){
     arrowBtn.classList.remove('header-arrow--white');
     headerTitle.classList.add('inactive');
     headerCategoryTitle.classList.add('inactive');
-    searchForm.classList.add('inactive');
+    searchForm.classList.remove('inactive');
 
     trendingMoviesPreviewList.classList.add('inactive');
     categoriesPreviewSection.classList.add('inactive');
@@ -116,6 +118,7 @@ function searchPage(){
 }
 
 function trendsPage(){
+    console.log('TRENDS')
 
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
@@ -130,5 +133,6 @@ function trendsPage(){
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 
-    console.log('TRENDS')
+    headerCategoryTitle.innerHTML = "Trending"
+    getTrendingMovies ()
 }
