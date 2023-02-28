@@ -35,11 +35,17 @@ function createMovies (movies, container, lazyLoad = false) {
         movieImg.setAttribute(
             lazyLoad ? 'data-img':'src',
             'https://image.tmdb.org/t/p/w300' + movie.poster_path
-        )
+        )        
+        movieImg.addEventListener('error', ()=>{
+            movieImg.setAttribute(
+                'src', 
+                'https://static.platzi.com/static/images/error/img404.png'
+            )
+        })
+
         if (lazyLoad) {
             lazyLoader.observe(movieImg)
         }
-
         movieContainer.appendChild(movieImg);
         container.appendChild(movieContainer)
     });
