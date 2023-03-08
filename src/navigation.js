@@ -15,12 +15,17 @@ arrowBtn.addEventListener('click', () =>{
 })
 
 
-window.addEventListener('DOMContentLoaded', navigator, false)
-window.addEventListener('hashchange', navigator, false)
+window.addEventListener('DOMContentLoaded', navigatorIndex, false)
+window.addEventListener('hashchange', navigatorIndex, false)
 window.addEventListener('scroll', infiniteScroll, false)
 
+lang.addEventListener("change", () => {  
+    localStorage.setItem("lang", lang.value);  
+    window.location.reload();
+});
 
-function navigator(){
+
+function navigatorIndex(){
     console.log({location})
 
     if (infiniteScroll){
@@ -69,6 +74,7 @@ function homePage(){
     getTrendingMoviesPreview();
     getCategoriesPreview();
     getLikedMovies();
+    setDefaultLang();
 }
 
 function categoriesPage(){

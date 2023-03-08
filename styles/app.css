@@ -236,6 +236,22 @@ button {
   border-bottom-right-radius: 8px;
 }
 
+.header__lang {
+  display: flex;
+  margin-top: 15px;
+  justify-content: end;
+  
+}
+
+.header__select {
+  background-color: var(--purple-light-1);
+  color: var(--purple-dark-1);
+  border-radius: 8px;
+  font-size: var(--font-family-text);
+  border: 1px solid var(--purple-dark-1);
+  outline: none;
+}
+
 
 /* Trending */
 .trendingPreview-header, .liked-header {

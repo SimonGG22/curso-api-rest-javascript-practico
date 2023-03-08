@@ -1,0 +1,34 @@
+{
+    "en": {
+      "Search Here ...": "Search Here ...",
+      "Trending": "Trending",
+      "See More": "See More",
+      "Categories": "Categories",
+      "Favorite Movies": "Favorite Movies",
+      "Recommendations": "Recommendations"
+    },
+    "fr": {
+      "Search Here ...": "Cherche ici ...",
+      "Trending": "Tendance",
+      "See More": "Voir plus",
+      "Categories": "Catégories",
+      "Favorite Movies": "Films préférés",
+      "Recommendations": "Recommandations"
+    },
+    "es": {
+      "Search Here ...": "Busca aquí ...",
+      "Trending": "Tendecia",
+      "See More": "Ver Más",
+      "Categories": "Categorías",
+      "Favorite Movies": "Películas Favoritas",
+      "Recommendations": "Recomendaciones"
+    },
+    "tr": {
+      "Search Here ...": "Burada ara ...",
+      "Trending": "Trend olan",
+      "See More": "Daha fazla gör",
+      "Categories": "Kategoriler",
+      "Favorite Movies": "Favori filmler",
+      "Recommendations": "öneriler"
+    }
+  }

@@ -11,19 +11,27 @@
 </head>
 <body>
     <header id="header" class="header-container">
+        <div class="header__lang">
+            <select class="header__select" name="lang" id="langId">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="tr">Turkish</option>
+            </select>
+        </div>
         <span class="header-arrow inactive">&lt;</span>
         <h1 class="header-title">PlatziMovies</h1>
-        <h1 class="header-title header-title--categoryView inactive">Acción</h1>
+        <h1 class="header-title header-title--categoryView inactive"></h1>
         <form id="searchForm" class="header-searchForm">
-            <input type="text" placeholder="Vengadores" />
+            <input type="text"/>
             <button id="searchBtn">🔍</button>
         </form>
     </header>
 
     <section id="trendingPreview" class="trendingPreview-container">
         <div class="trendingPreview-header">
-            <h2 class="trendingPreview-title">Tendencias</h2>
-            <button class="trendingPreview-btn">Ver más</button>
+             <h2 class="trendingPreview-title"><!--Tendencias--></h2> 
+            <button class="trendingPreview-btn"><!--Ver más--></button>
         </div>
         <article class="trendingPreview-movieList">
             <div class="movie-container movie-container--loading"></div>
@@ -40,7 +48,7 @@
     </section>
 
     <section id="categoriesPreview" class="categoriesPreview-container">
-        <h2 class="categoriesPreview-title">Categorías</h2>
+        <h2 class="categoriesPreview-title"><!--Categorías--></h2>
         <article class="categoriesPreview-list">
             <div class="category-container category-container--loading"></div>
             <div class="category-container category-container--loading"></div>
@@ -54,7 +62,7 @@
 
     <section id="liked" class="liked-container">
         <div class="liked-header">
-            <h2 class="liked-title">Peliculas favoritas</h2>
+            <h2 class="liked-title"><!--Peliculas favoritas--></h2>
         </div>
         <article class="liked-movieList">
             <div class="movie-container"></div>
@@ -95,7 +103,7 @@
         </article>
 
         <article class="relatedMovies-container">
-            <h2 class="relatedMovies-title">Películas similares</h2>
+            <h2 class="relatedMovies-title"><!--Películas similares--></h2>
             <div class="relatedMovies-scrollContainer">
                 <div class="movie-container movie-container--loading"></div>
                 <div class="movie-container movie-container--loading"></div>

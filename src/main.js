@@ -6,7 +6,10 @@ const api = axios.create({
         'Content-Type':'application/json;charset=utf-8'
     },
     params: {
-        'api_key': API_KEY   
+        'api_key': API_KEY,
+        'language': localStorage.getItem("lang")
+            ? localStorage.getItem("lang")
+            : navigator.language[0] + navigator.language[1], 
     },
 })
 
@@ -255,8 +258,38 @@ async function getRelatedMoviesId(id) {
     createMovies(relatedMovies, relatedMoviesContainer)
 }
 
+async function setDefaultLang(){ 
+    if (!localStorage.getItem("lang")) {
+      if (navigator.language.includes("-")) {
+        const navLang = navigator.language.split("-");
+        localStorage.setItem("lang", navLang[0]);
+        } else {
+        localStorage.setItem("lang", navigator.language);
+        }
+    }
+
+    lang.value = localStorage.getItem("lang");
+
+    const langWords = await getWords();
+
+    trendingTitle.innerText = langWords["Trending"];
+    trendingPreviewBtn.innerText = langWords["See More"]
+    categoriesTitle.innerHTML = langWords["Categories"]
+    likedTitle.innerHTML = langWords["Favorite Movies"]
+    recommendationTitle.innerHTML = langWords["Recommendations"]
+}   
+
 function getLikedMovies() {
     const likedMovies = likedMovieList();
     const moviesArray = Object.values(likedMovies)
     createMovies(moviesArray, likedMovieListArticle, {lazyLoad:true, clean: true})
+    
 }
+
+async function getWords() {
+    const langWords = localStorage.getItem("lang");
+    const languagueTexts = await fetch("../src/lang.json");
+    const data = await languagueTexts.json();
+    return data[langWords];
+}
+
